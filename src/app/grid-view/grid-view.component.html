@@ -1,0 +1,13 @@
+
+<div class="container">
+    <div class="row flex-container">
+        <div *ngFor="let tile of tiles" class="col-lg-4 col-md-6 col-sm-6 col-sm-12 padding">
+            <app-tile tile_type={{tile_type}} _id={{tile._id}} image={{tile.image}} movie={{tile.name}} [songs]="tile.song_list"></app-tile>
+        </div>
+
+    </div>
+</div>
+
+
+
+  

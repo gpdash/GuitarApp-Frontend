@@ -1,0 +1,41 @@
+<mat-toolbar style="position: fixed;z-index: 999">
+  <mat-toolbar-row>
+    <span [routerLink]="['/posts']" routerLinkActive="router-link-active">AyushGuitar</span>
+    <span class="menu-spacer"></span>
+    <span class="material-icons" (click)="sidenav.toggle()" style="margin-right: 20px;" fxShow="true" fxHide.gt-sm>menu</span>
+    <div fxShow="true" fxHide.lt-md  fxFlex="60" fxLayoutAlign="space-around">
+      <a class="grey-color" [routerLink]="['/chords']" routerLinkActive="router-link-active">Chords</a>
+      <a class="grey-color" [routerLink]="['/tabs']" routerLinkActive="router-link-active">Tabs</a>
+      <a class="grey-color" *ngIf="!authService.loggedIn()" [routerLink]="['/login']" routerLinkActive="router-link-active">Login</a>
+      <a class="grey-color" *ngIf="!authService.loggedIn()" [routerLink]="['/register']" routerLinkActive="router-link-active">Sign Up</a>
+      <a class="grey-color" *ngIf="authService.loggedIn()" (click)="authService.logoutUser()" [routerLink]="['/logout']" routerLinkActive="router-link-active">Logout</a>
+      <span>
+        <input class="searchItem" type="text" placeholder="Search...">
+        <span class="material-icons">search</span>  
+      </span>        
+      <span class="material-icons" fxAlign="none">account_circle</span>
+    </div>
+    
+  </mat-toolbar-row>
+</mat-toolbar>
+<mat-sidenav-container >
+  
+  <mat-sidenav #sidenav fixedInViewport="true">
+    <mat-nav-list>
+      <a mat-list-item class="grey-color" [routerLink]="['/chords']" routerLinkActive="router-link-active" >Chords</a>
+      <a mat-list-item class="grey-color" [routerLink]="['/tabs']" routerLinkActive="router-link-active" >Tabs</a>
+      <a mat-list-item class="grey-color" href="#">Videos</a>
+      <a mat-list-item class="grey-color" href="#">About</a>      
+      <span mat-list-item>
+        <input mat-list-item id="side_search" class="searchItem" type="text" placeholder="Search...">
+        <span mat-list-item class="material-icons">search</span>  
+      </span> 
+      <a mat-list-item class="grey-color" href="#">Account<span mat-list-item class="material-icons">account_circle</span></a> 
+  </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content class="scroll-area">
+    <ng-content ></ng-content>
+    <app-footer style="background-color: lightgray;"></app-footer>
+  </mat-sidenav-content>
+</mat-sidenav-container>

@@ -1,0 +1,39 @@
+<div>
+    <img src={{image}} alt="..." class="img-thumbnail">
+    <div class="panel" fxLayout="column" fxLayoutAlign=" center">
+        <span style="width: fit-content;text-align: center;height: 30px;font-size: small;margin:0;"> <h2> {{movie}} </h2> </span>
+
+        <span style="z-index: 1;margin:0;">
+            <ul>
+                <li (mouseover)="songs_button='open'" (mouseout)="songs_button='close'" fxLayout="column" fxLayoutAlign=" center">
+                    <a href="#" fxLayout="row" fxLayoutAlign=" center">
+                        <span>{{tile_type}}</span>
+                        <span class="material-icons">arrow_drop_down</span>
+                    </a>
+                    <ul [ngClass]="songs_button" >
+                        <li *ngFor="let song of songs"><a href="#" style="background-color: rgb(0,0,0,0.5);">{{song[0]}}</a></li>
+                    </ul>
+                </li>
+                
+            </ul>
+        </span>
+
+        <!-- (click)="this.songs_button=='open'? this.songs_button='close': this.songs_button='open'" -->
+      
+    </div>
+    
+    
+</div>
+
+<!-- <a class="dropdown-item" href="#" *ngFor="let song of songs">{{song}}</a> -->
+
+<!-- 
+<mat-form-field appearance="fill" class="transparent">
+    <mat-label class="transparent">Songs</mat-label>
+    <mat-select [formControl]="panelColor"
+                panelClass="example-panel-{{panelColor.value}}">
+      <mat-option value="red" class="transparent">Red</mat-option>
+      <mat-option value="green" class="transparent">Green</mat-option>
+      <mat-option value="blue" class="transparent">Blue</mat-option>
+    </mat-select>
+  </mat-form-field> -->

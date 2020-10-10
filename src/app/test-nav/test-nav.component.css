@@ -1,0 +1,54 @@
+
+mat-sidenav-container{
+  color: #bfbfbf;
+  height: 100%;
+  background: transparent;
+}
+
+mat-sidenav,mat-sidenav-content{
+  padding: 16px;
+}
+
+mat-sidenav{
+  margin-top: 70px;
+  color: #bfbfbf;
+  /* background-color:grey; */
+  background-color: rgba(0,0,0,0.2); 
+  width: 300px;
+}
+
+mat-toolbar{
+  color: #bfbfbf;
+  background-color:grey;
+  background-color: rgba(0,0, 0,0.5);  
+}
+
+mat-nav-list > span{
+  margin-top: 10px;
+}
+
+/* mat-toolbar > div {
+  margin-left: 2%;
+}
+*/
+
+mat-toolbar > div >*{
+  margin-left: 40px;
+}
+
+.grey-color{
+  color: #bfbfbf;
+}
+
+.example-spacer{
+  flex: 1 1 auto;
+}
+
+#searchItem{
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #bfbfbf; 
+  outline: none;
+  color: #bfbfbf;
+  height: 20px;
+}
